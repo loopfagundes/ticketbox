@@ -7,7 +7,6 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.service.ExtentTestManager;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 public class TicketBoxStep {
     private final WebDriver driver;
