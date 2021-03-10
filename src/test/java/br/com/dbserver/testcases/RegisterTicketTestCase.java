@@ -15,6 +15,6 @@ public class RegisterTicketTestCase extends BaseTest {
         driver.get(Property.get("url"));
         TicketBoxStep ticketBoxStep = new TicketBoxStep(driver);
         ticketBoxStep
-                .validatePage();
+                .registerNewUser();
     }
 }

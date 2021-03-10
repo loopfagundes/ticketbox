@@ -14,7 +14,39 @@ public class TicketBoxPageObject {
         waitElement = new WaitElement(_driver);
     }
 
-    public WebElement validateTicketBoxPageLabel() {
-        return waitElement.visibilityOf(By.cssSelector("#app > header > h1"));
+    public WebElement firstNameTextField() {
+        return waitElement.toBeClickable(By.id("first-name"));
+    }
+
+    public WebElement lastNameTextField() {
+        return waitElement.toBeClickable(By.id("last-name"));
+    }
+
+    public WebElement emailTextField() {
+        return waitElement.toBeClickable(By.id("email"));
+    }
+
+    public WebElement friendCheckBox() {
+        return waitElement.toBeClickable(By.id("friend"));
+    }
+
+    public WebElement specialRequestTextField() {
+        return waitElement.toBeClickable(By.id("requests"));
+    }
+
+    public WebElement iAgreeCheckBox() {
+        return waitElement.toBeClickable(By.id("agree"));
+    }
+
+    public WebElement signatureTextField() {
+        return waitElement.toBeClickable(By.id("signature"));
+    }
+
+    public WebElement confirmTicketsButton() {
+        return waitElement.toBeClickable(By.className("active"));
+    }
+
+    public WebElement validateTicketSuccessfullyOrderLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#app > div > p"));
     }
 }
