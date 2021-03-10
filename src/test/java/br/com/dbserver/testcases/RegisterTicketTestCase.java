@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class RegisterTicketTestCase extends BaseTest {
 
     @Test
-    public void registerUserSuceessfully() {
+    public void registerUserSuccessfully() {
         WebDriver driver = DriverManager.getDriver();
         driver.get(Property.get("url"));
         TicketBoxStep ticketBoxStep = new TicketBoxStep(driver);
