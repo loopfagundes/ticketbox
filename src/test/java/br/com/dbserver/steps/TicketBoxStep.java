@@ -24,14 +24,14 @@ public class TicketBoxStep {
     public TicketBoxStep registerNewUser() {
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
+        String signature = firstName + " " + lastName;
         ticketBoxPageObject.firstNameTextField().sendKeys(firstName);
         ticketBoxPageObject.lastNameTextField().sendKeys(lastName);
         ticketBoxPageObject.emailTextField().sendKeys(generatorFaker.getEmail());
         ticketBoxPageObject.friendCheckBox().click();
         ticketBoxPageObject.specialRequestTextField().sendKeys(generatorFaker.getSpecialRequests());
         ticketBoxPageObject.iAgreeCheckBox().click();
-        ticketBoxPageObject.signatureTextField().sendKeys(firstName);
-        ticketBoxPageObject.signatureTextField().sendKeys(" " + lastName);
+        ticketBoxPageObject.signatureTextField().sendKeys(signature);
         ticketBoxPageObject.confirmTicketsButton().click();
         if (ticketBoxPageObject.validateTicketSuccessfullyOrderLabel().getText().equals("Ticket(s) successfully ordered.")) {
             ExtentTestManager.getTest().log(Status.PASS, "Registrou com sucesso!", Screenshot.capture());
